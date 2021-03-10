@@ -5,11 +5,11 @@
     </div>
 
     <div class="info-center">
-      <a>Delivery</a>
-      <a>Blog</a>
-      <a>Recipes</a>
-      <a>Gif Cards</a>
-      <a>Shopping guides</a>
+      <a class="link" href="#">Delivery</a>
+      <a class="link" href="#">Blog</a>
+      <a class="link" href="#">Recipes</a>
+      <a class="link" href="#">Gif Cards</a>
+      <a class="link" href="#">Shopping guides</a>
     </div>
 
     <div class="info-right">
@@ -36,17 +36,43 @@ export default {
   display: flex;
   justify-content: space-evenly;
 
+  .info-left {
+    font-size: 0.7rem;
+    text-decoration: underline;
+  }
+
   .info-center {
     display: flex;
     justify-content: space-evenly;
     width: 20%;
-    font-weight: 600;
+    font-weight: 500;
+
+    .link {
+      color: #f1f1f1;
+      text-decoration: none;
+    }
+
+    .link:hover {
+      color:#13C0A7
+    }
   }
 
   .info-right {
     display: flex;
     justify-content: space-evenly;
     width: 5%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .container {
+    .info-center {
+      display: none;
+    }
+
+    .info-right {
+      display: none;
+    }
   }
 }
 </style>

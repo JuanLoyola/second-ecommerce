@@ -97,6 +97,7 @@ export default {
     width: 100%;
     height: 600px;
     background-position-x: center;
+    align-items: flex-start;
 
     .card {
       background-color: #fff;
