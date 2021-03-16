@@ -33,8 +33,6 @@ export default {
   overflow: hidden;
   margin: 30px 0;
 
-  left: 25%;
-
   button{
     position: absolute;
     height: 40px;
@@ -57,6 +55,13 @@ export default {
 
   .prev {
     left: 0;
+  }
+}
+
+@media (max-width: 1300px) {
+  .carousel {
+    position: relative;
+    width: 100%;
   }
 }
 </style>

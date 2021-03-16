@@ -55,6 +55,7 @@ export default {
   position: sticky;
   top: 0;
   border-bottom: rgba(51, 51, 51, 0.288) 1px dashed;
+  z-index: 3;
 
   .search {
     width: 65%;
@@ -265,6 +266,7 @@ export default {
 
         .link {
           color: #333;
+          display: none; // cambiar para ajustar el responsive
         }
 
         .link:hover {

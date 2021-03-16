@@ -28,6 +28,7 @@ export default {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-top: 10px;
 
   .card {
     background-color: #fff;

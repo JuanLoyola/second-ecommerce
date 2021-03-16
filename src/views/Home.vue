@@ -2,20 +2,23 @@
   <div class="container">
     <div class="home">
     <TheOne/>
-    <Carousel
-    @next="next"
-    @prev="prev"
-    >
-      <Carousel-slide
-        v-for="(slide, index) in slides"
-        :key="slide"
-        :index="index"
-        :visibleSlide = "visibleSlide"
-        :direction = "direction"
+    <div class="row">
+      <Carousel
+        @next="next"
+        @prev="prev"
         >
-        <img class="img" :src="slide">
-      </Carousel-slide>
-    </Carousel>
+          <Carousel-slide
+            v-for="(slide, index) in slides"
+            :key="slide"
+            :index="index"
+            :visibleSlide = "visibleSlide"
+            :direction = "direction"
+            >
+            <img class="img" :src="slide">
+          </Carousel-slide>
+      </Carousel>
+      <TheStory />
+    </div>
   </div>
   </div>
 </template>
@@ -24,6 +27,7 @@
 import TheOne from '@/components/banners/TheOne.vue'
 import Carousel from '../components/Carousel.vue'
 import CarouselSlide from '@/components/CarouselSlide.vue'
+import TheStory from '@/components/banners/TheStory.vue'
 
 export default {
   name: 'Home',
@@ -31,14 +35,15 @@ export default {
   components: {
     TheOne,
     Carousel,
-    CarouselSlide
+    CarouselSlide,
+    TheStory
   },
 
   data () {
     return {
       slides: [
-        'https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
         'https://images.unsplash.com/photo-1605036927639-1555563331a9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        'https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
         'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
       ],
       visibleSlide: 0,
@@ -87,6 +92,15 @@ export default {
       width: 100%;
       height: 100%;
     }
+
+    .row {
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      margin: 30px 0;
+    }
   }
 }
 
@@ -95,6 +109,10 @@ export default {
 
     .home {
       width: 100%;
+
+      .row {
+        flex-flow: column;
+      }
     }
   }
 }
