@@ -10,36 +10,20 @@
           <i class="fas fa-arrow-left"></i>
         </button>
         <p>1 - 10</p>
-        <button @click="prev" class="prev">
+        <button @click="previous" class="prev">
           <i class="fas fa-arrow-right"></i>
         </button>
       </div>
     </div>
 
-    <div class="info-bottom">
+    <div class="info-bottom" id="slide">
 
-      <div class="card">
+      <div class="card" v-for="(item, index) in items" :key="index">
         <div class="imgBox">
-          <img class="image" src="@/assets/images/product1.jpg" alt="product image">
+          <img class="image" style="width:100%" :src="item.src" alt="product image">
         </div>
-        <p class="quantity">17 products</p>
-        <p class="product-name">The best for your health</p>
-      </div>
-
-      <div class="card">
-        <div class="imgBox">
-          <img class="image" src="@/assets/images/product2.jpg" alt="product image">
-        </div>
-        <p class="quantity">11 products</p>
-        <p class="product-name">Our gluten-free selection</p>
-      </div>
-
-      <div class="card">
-        <div class="imgBox">
-          <img class="image" src="@/assets/images/product3.jpg" alt="product image">
-        </div>
-        <p class="quantity">25 products</p>
-        <p class="product-name">Clean home essentials</p>
+        <p class="quantity">{{item.quantity}}</p>
+        <p class="product-name">{{item.name}}</p>
       </div>
 
     </div>
@@ -50,12 +34,64 @@
 export default {
   name: 'CarouselProduct',
 
+  data () {
+    return {
+      count: 0,
+      items: [
+        {
+          src: require('../assets/images/product1.jpg'),
+          name: 'The best for your health',
+          quantity: '17 products'
+        },
+        {
+          src: require('../assets/images/product2.jpg'),
+          name: 'Our gluten-free selection',
+          quantity: '11 products'
+        },
+        {
+          src: require('../assets/images/product3.jpg'),
+          name: 'Clean home essentials',
+          quantity: '25 products'
+        },
+        {
+          src: require('../assets/images/product2.jpg'),
+          name: 'The best for your health',
+          quantity: '6 products'
+        }
+      ],
+      frame: 2
+    }
+  },
+
   methods: {
     next () {
-      this.$emit('next')
+      this.count--
+      this.scroll('previous')
     },
-    prev () {
-      this.$emit('prev')
+    previous () {
+      this.count++
+      this.scroll('next')
+    },
+    scroll (position) {
+      const el = document.getElementById('slide')
+      let pos = 0
+      const id = setInterval(frame, 5)
+      const num = this.items.length - this.frame
+      const width = 250
+      const resize = num * width
+      const check = position === 'reset' ? resize : width
+      function frame () {
+        if (pos === check) {
+          clearInterval(id)
+        } else {
+          pos += 5
+          if (position === 'next') {
+            el.scrollLeft += 5
+          } else {
+            el.scrollLeft -= 5
+          }
+        }
+      }
     }
   }
 }
@@ -68,6 +104,7 @@ export default {
   display: flex;
   flex-flow: column nowrap;
   overflow: hidden;
+  margin-bottom: 30px;
 
   .info-top {
     width:100%;
@@ -117,6 +154,12 @@ export default {
     }
   }
 
+  #slide {
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
   .info-bottom {
     width: 100%;
     margin: 30px 0;
@@ -130,6 +173,7 @@ export default {
       justify-content: space-between;
       height: 350px;
       text-align: start;
+      margin-right: 20px;
 
       .imgBox {
         width: 25em;
