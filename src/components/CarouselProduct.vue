@@ -39,22 +39,22 @@ export default {
       count: 0,
       items: [
         {
-          src: require('../assets/images/product1.jpg'),
+          src: require('../assets/products/product1.jpg'),
           name: 'The best for your health',
           quantity: '17 products'
         },
         {
-          src: require('../assets/images/product2.jpg'),
+          src: require('../assets/products/product2.jpg'),
           name: 'Our gluten-free selection',
           quantity: '11 products'
         },
         {
-          src: require('../assets/images/product3.jpg'),
+          src: require('../assets/products/product3.jpg'),
           name: 'Clean home essentials',
           quantity: '25 products'
         },
         {
-          src: require('../assets/images/product2.jpg'),
+          src: require('../assets/products/product4.jpg'),
           name: 'The best for your health',
           quantity: '6 products'
         }
