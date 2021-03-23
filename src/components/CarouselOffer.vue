@@ -208,7 +208,7 @@ export default {
         width: 20em;
         .image {
           width: 100%;
-          height: 100%;
+          height: 80%;
         }
 
         .discount {
@@ -269,6 +269,57 @@ export default {
 
       .btn-cart:hover {
         background: #03a5a2;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+
+    .info-top {
+
+      .title {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .link {
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: #a571d6;
+      }
+
+      .options {
+
+        button{
+          height: 30px;
+          width: 30px;
+          top: calc(50% - 20px);
+          background-color: rgba(0, 0, 0, 0.7);
+          border: none;
+          color: #fff;
+        }
+      }
+    }
+
+    .info-bottom {
+
+      .card {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        height: 570px;
+        text-align: start;
+        margin-right: 19px;
+
+        .imgBox {
+          width: 15em;
+          .image {
+            width: 100%;
+            height: 80%;
+          }
+        }
       }
     }
   }

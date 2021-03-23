@@ -196,4 +196,44 @@ export default {
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .container {
+
+    .info-top {
+
+      .title {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .link {
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: #a571d6;
+      }
+
+      .options {
+
+        button{
+          height: 30px;
+          width: 30px;
+          top: calc(50% - 20px);
+          background-color: rgba(0, 0, 0, 0.7);
+          border: none;
+          color: #fff;
+        }
+      }
+    }
+
+    .info-bottom {
+      .card {
+
+        .imgBox {
+          width: 15em;
+        }
+      }
+    }
+  }
+}
 </style>

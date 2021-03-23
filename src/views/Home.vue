@@ -21,6 +21,7 @@
     </div>
     <CarouselProduct></CarouselProduct>
     <CarouselOffer></CarouselOffer>
+    <TheTwo></TheTwo>
   </div>
   </div>
 </template>
@@ -32,6 +33,7 @@ import CarouselSlide from '@/components/CarouselSlide.vue'
 import TheStory from '@/components/banners/TheStory.vue'
 import CarouselProduct from '@/components/CarouselProduct.vue'
 import CarouselOffer from '@/components/CarouselOffer.vue'
+import TheTwo from '@/components/banners/TheTwo.vue'
 
 export default {
   name: 'Home',
@@ -42,7 +44,8 @@ export default {
     CarouselSlide,
     TheStory,
     CarouselProduct,
-    CarouselOffer
+    CarouselOffer,
+    TheTwo
   },
 
   data () {
