@@ -2,9 +2,11 @@
 This repository is a practice as a way to try out new things
 
 # Tools 
+```
 * HTML5
 * CSS3
 * Javascript with Vue.js 3 framework
+```
 
 # Desktop preview:
 
