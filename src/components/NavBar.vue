@@ -7,8 +7,9 @@
         <p class="title">Vegan <br> Shop</p>
       </div>
 
-      <div class="center">
-        <input class="input" type="text" placeholder="Search">
+      <div class="search-box">
+        <input type="text" placeholder="Search for articles" />
+        <i class="fas fa-search"></i>
       </div>
 
       <div class="right">
@@ -83,27 +84,28 @@ export default {
       }
     }
 
-    .center {
-      width: 50%;
-      height: 40px;
-      margin: 0 40px;
-
-      .input {
-        width: 100%;
-        height: 100%;
-      }
-
+    .search-box {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
       input {
-        padding-left: 20px;
-      }
-
-      input:focus {
-        outline-color: #b6b3b3;
-      }
-
-      input::placeholder {
-        color: #333;
+        border: none;
+        outline: none;
+        width: calc(100% - 80px);
+        padding: 15px 60px 15px 20px;
+        margin: 0;
+        border-radius: 20px;
+        background-color: #efefef;
+        font-family: "Segoe UI", Tahoma;
         font-size: 1rem;
+      }
+      i {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        font-size: 1.6rem;
+        color: #aaa;
+        cursor: pointer;
       }
     }
 
