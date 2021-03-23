@@ -1,4 +1,4 @@
-# Juan Loyola Product View/Product Card
+# Juan Loyola E-commerce 2
 This repository is a practice as a way to try out new things
 
 # Tools 
