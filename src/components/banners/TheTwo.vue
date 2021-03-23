@@ -32,7 +32,6 @@ export default {
 <style lang="scss" scoped>
 .container {
   width: 100%;
-  height: 750px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
