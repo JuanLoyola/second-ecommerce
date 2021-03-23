@@ -1,7 +1,16 @@
 <template>
   <InfoBar></InfoBar>
-  <NavBar></NavBar>
-  <router-view/>
+  <NavBarMobile />
+    <div class="content" :class="{'open':showNav}">
+      <div class="top-bar">
+        <div id="navigation-icon" v-if="mobileView"
+          @click="showNav = !showNav">
+          <i class="fas fa-bars"></i>
+        </div>
+        <NavBar v-if="!mobileView" />
+      </div>
+      <router-view/>
+    </div>
 </template>
 
 <style lang="scss">
@@ -19,16 +28,60 @@ html {
   box-sizing: border-box;
   text-decoration: none;
 }
+.top-bar {
+  display: flex;
+  width: 100%;
+}
+#navigation-icon {
+  padding: 10px 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  i {
+    font-size: 2rem;
+  }
+}
+.content {
+  position: absolute;
+  top: 35px;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: 1s transform cubic-bezier(0,.12,.14,1);
+}
+.open {
+  transform: translateX(300px);
+}
 </style>
 
 <script>
 import InfoBar from '@/components/InfoBar.vue'
 import NavBar from '@/components/NavBar.vue'
+import NavBarMobile from '@/components/NavBarMobile.vue'
 
 export default {
+  data: () => {
+    return {
+      mobileView: true,
+      showNav: false
+    }
+  },
+
+  methods: {
+    handleView () {
+      this.mobileView = window.innerWidth <= 990
+    }
+  },
+
   components: {
     InfoBar,
-    NavBar
+    NavBar,
+    NavBarMobile
+  },
+
+  created () {
+    this.handleView()
+    window.addEventListener('resize', this.handleView)
   }
 }
 </script>
