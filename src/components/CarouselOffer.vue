@@ -47,32 +47,32 @@ export default {
       items: [
         {
           src: require('../assets/products/product5.jpg'),
-          name: 'Solid Shampoo greasy hair with lemon',
+          name: 'Brownies with nuts',
           price: '8,18 €',
           discount: '-30%'
         },
         {
           src: require('../assets/products/product6.jpg'),
-          name: 'Organic filled cereals - peanut butter & cacao',
+          name: 'Chocolate cake with strawberry',
           price: '11,23 €',
           discount: '-25%'
         },
         {
           src: require('../assets/products/product7.jpg'),
-          name: 'Anti phone waves patch',
+          name: 'Peanut butter',
           price: '4,50 €',
           discount: '-50%'
         },
         {
           src: require('../assets/products/product8.jpg'),
-          name: 'Cashew with Tamari and curry',
-          price: '24,71 €',
+          name: 'Oreo cake',
+          price: '18,71 €',
           discount: '-10%'
         },
         {
           src: require('../assets/products/product9.jpg'),
-          name: 'Organic filled',
-          price: '30,50 €',
+          name: 'Sweet bread',
+          price: '20,50 €',
           discount: '-50%'
         },
         {
@@ -200,7 +200,7 @@ export default {
       display: flex;
       flex-flow: column;
       justify-content: space-between;
-      height: 500px;
+      height: 570px;
       text-align: start;
       margin-right: 19px;
 
