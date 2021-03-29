@@ -127,7 +127,11 @@ export default {
         }
 
         .link {
-          color: rgb(35, 182, 240);
+          color: #6bc6eb;
+
+          &:hover {
+            color: #0f739b;
+          }
         }
       }
 

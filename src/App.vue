@@ -10,6 +10,7 @@
         <NavBar v-if="!mobileView" />
       </div>
       <router-view/>
+    <TheFooter></TheFooter>
     </div>
 </template>
 
@@ -44,7 +45,7 @@ html {
   position: absolute;
   top: 35px;
   width: 100%;
-  padding: 20px;
+  padding: 0px;
   background-color: #fff;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   transition: 1s transform cubic-bezier(0,.12,.14,1);
@@ -52,12 +53,18 @@ html {
 .open {
   transform: translateX(300px);
 }
+@media (min-width: 1300px) {
+  .content {
+    padding: 0px;
+  }
+}
 </style>
 
 <script>
 import InfoBar from '@/components/InfoBar.vue'
 import NavBar from '@/components/NavBar.vue'
 import NavBarMobile from '@/components/NavBarMobile.vue'
+import TheFooter from '@/components/TheFooter.vue'
 
 export default {
   data: () => {
@@ -76,7 +83,8 @@ export default {
   components: {
     InfoBar,
     NavBar,
-    NavBarMobile
+    NavBarMobile,
+    TheFooter
   },
 
   created () {
