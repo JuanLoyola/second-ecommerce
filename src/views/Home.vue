@@ -169,7 +169,6 @@ export default {
       justify-content: space-around;
       flex-flow: column nowrap;
       color: #f1f1f1;
-      background: red;
       text-align: start;
     }
 
