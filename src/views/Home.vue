@@ -61,6 +61,7 @@
       </Tab>
     </Tabs>
     </div>
+    <TheThree></TheThree>
   </div>
   </div>
 </template>
@@ -75,6 +76,7 @@ import CarouselOffer from '@/components/CarouselOffer.vue'
 import TheTwo from '@/components/banners/TheTwo.vue'
 import Tab from '@/components/tabs/Tab.vue'
 import Tabs from '@/components/tabs/Tabs.vue'
+import TheThree from '@/components/banners/TheThree.vue'
 
 export default {
   name: 'Home',
@@ -88,7 +90,8 @@ export default {
     CarouselOffer,
     TheTwo,
     Tab,
-    Tabs
+    Tabs,
+    TheThree
   },
 
   data () {
