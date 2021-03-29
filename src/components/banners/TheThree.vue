@@ -4,7 +4,7 @@
     <div class="title">
       <p class="title">Shop by diet</p>
     </div>
-      <div class="card" v-for="(item, index) in cards" :key="index">
+      <div class="card" v-for="(item, index) in cards" :key="index" :style="{ 'background-color': item.color}">
 
       <div class="card-info">
         <p class="name">{{item.name}}</p>
@@ -28,37 +28,43 @@ export default {
           quantity: '2657',
           name: 'vegan',
           url: '#',
-          image: require('../../assets/images/vegan.png')
+          image: require('../../assets/images/vegan.png'),
+          color: '#FFF6F2'
         },
         {
           name: 'protein',
           quantity: '229',
           url: '#',
-          image: require('../../assets/images/protein.png')
+          image: require('../../assets/images/protein.png'),
+          color: '#edf3e3'
         },
         {
           name: 'gluten free',
           quantity: '1615',
           url: '#',
-          image: require('../../assets/images/gluten.png')
+          image: require('../../assets/images/gluten.png'),
+          color: '#fdf7dd'
         },
         {
           name: 'lactose free',
           quantity: '1916',
           url: '#',
-          image: require('../../assets/images/lactose.png')
+          image: require('../../assets/images/lactose.png'),
+          color: '#FFF6F2'
         },
         {
           name: 'organic',
           quantity: '2509',
           url: '#',
-          image: require('../../assets/images/organic.png')
+          image: require('../../assets/images/organic.png'),
+          color: '#edf3e3'
         },
         {
           name: 'low in saturated fats',
           quantity: '814',
           url: '#',
-          image: require('../../assets/images/fat.png')
+          image: require('../../assets/images/fat.png'),
+          color: '#fdf7dd'
         }
       ]
     }
@@ -83,7 +89,6 @@ export default {
     .card {
       width: 370px;
       height: 140px;
-      background-color: #FFF6F2;
       color: #72455F;
       display: flex;
       justify-content: center;
